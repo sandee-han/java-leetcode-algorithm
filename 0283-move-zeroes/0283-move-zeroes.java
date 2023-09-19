@@ -1,11 +1,11 @@
 class Solution {
-    public int[] moveZeroes(int[] nums) {
+    public void moveZeroes(int[] nums) {
         int frontPointer = 0;
         int endPointer = 1;
         int temp;
 
         if (nums.length == 1) {
-            return nums;
+            return;
         }
 
         while (endPointer < nums.length) {
@@ -23,6 +23,6 @@ class Solution {
             }
         }
 
-        return nums;
+        return;
     }
 }
