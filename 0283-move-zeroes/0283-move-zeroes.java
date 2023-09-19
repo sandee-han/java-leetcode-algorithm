@@ -1,28 +1,16 @@
 class Solution {
     public void moveZeroes(int[] nums) {
-        int frontPointer = 0;
-        int endPointer = 1;
-        int temp;
+        int ptr = 0;
 
-        if (nums.length == 1) {
-            return;
-        }
-
-        while (endPointer < nums.length) {
-            if (nums[frontPointer] == 0 && nums[endPointer] != 0) {
-                temp = nums[frontPointer];
-                nums[frontPointer] = nums[endPointer];
-                nums[endPointer] = temp;
-                frontPointer++;
-                endPointer++;
-            } else if (nums[frontPointer] == 0 && nums[endPointer] == 0){
-                endPointer++;
-            } else {
-                frontPointer++;
-                endPointer++;
+        for(int i=0; i<nums.length; i++) {
+            if(nums[i]!=0) {
+                nums[ptr] = nums[i];
+                ptr++;
             }
         }
 
-        return;
+        while(ptr<nums.length) {
+            nums[ptr++] = 0;
+        }
     }
 }
